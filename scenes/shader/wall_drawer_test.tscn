@@ -1,0 +1,26 @@
+[gd_scene load_steps=7 format=3 uid="uid://nat3td4dmisk"]
+
+[ext_resource type="Shader" uid="uid://ve6au8y5f8v2" path="res://scenes/shader/wall_drawer.gdshader" id="1_wcbn0"]
+[ext_resource type="Texture2D" uid="uid://ckxgjbj5dygak" path="res://assets/textures/door/door_1.png" id="2_ip5d8"]
+[ext_resource type="Texture2D" uid="uid://dmpdd2wjoemkx" path="res://assets/textures/wall/wall_1.png" id="3_1tpht"]
+[ext_resource type="Texture2D" uid="uid://cief4ml4tv5gi" path="res://assets/textures/window/window_1.png" id="4_5ti3q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sy22t"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_wcbn0")
+shader_parameter/wall_texture = ExtResource("3_1tpht")
+shader_parameter/window_texture = ExtResource("4_5ti3q")
+shader_parameter/door_texture = ExtResource("2_ip5d8")
+shader_parameter/cell_w = 2.0
+shader_parameter/cell_h = 2.5
+shader_parameter/total_w = 6.0
+shader_parameter/total_h = 10.0
+shader_parameter/draw_door = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vgdpk"]
+material = SubResource("ShaderMaterial_sy22t")
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(6, 0, 0, 0, 2, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_vgdpk")

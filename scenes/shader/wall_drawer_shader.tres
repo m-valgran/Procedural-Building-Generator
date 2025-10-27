@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cxha3aaxbxe8k"]
+
+[ext_resource type="Shader" uid="uid://ve6au8y5f8v2" path="res://scenes/shader/wall_drawer.gdshader" id="1_rsesw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rsesw")
+shader_parameter/cell_w = 0.0
+shader_parameter/cell_h = 0.0
+shader_parameter/total_w = 0.0
+shader_parameter/total_h = 0.0
+shader_parameter/draw_door = false
