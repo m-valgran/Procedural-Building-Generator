@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://6pefd7uwy0o6"]
+[gd_scene format=4 uid="uid://6pefd7uwy0o6"]
 
 [ext_resource type="PackedScene" uid="uid://cn3273spyyafb" path="res://scenes/generator/generator.tscn" id="1_nnsk1"]
 [ext_resource type="Script" uid="uid://r0m7lehork80" path="res://scenes/world/world.gd" id="1_rwgxs"]
@@ -44,16 +44,16 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p5kn5")
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" unique_id=1750335000]
 script = ExtResource("1_rwgxs")
 
-[node name="Environment" parent="." instance=ExtResource("2_k0juu")]
+[node name="Environment" parent="." unique_id=1930600716 instance=ExtResource("2_k0juu")]
 
-[node name="Generator" parent="." instance=ExtResource("1_nnsk1")]
+[node name="Generator" parent="." unique_id=579654141 instance=ExtResource("1_nnsk1")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1905708775]
 
-[node name="Gui" type="Control" parent="CanvasLayer"]
+[node name="Gui" type="Control" parent="CanvasLayer" unique_id=757850816]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,14 +61,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="OptSize" type="OptionButton" parent="CanvasLayer/Gui"]
-layout_mode = 2
-offset_left = 567.0
-offset_top = 558.0
-offset_right = 681.0
-offset_bottom = 589.0
-grow_horizontal = 0
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Gui" unique_id=181509184]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -217.0
+offset_top = -40.0
+offset_right = 217.0
+grow_horizontal = 2
 grow_vertical = 0
+theme_override_constants/margin_bottom = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gui/MarginContainer" unique_id=65720183]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 71
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer" unique_id=2125405368]
+layout_mode = 2
+
+[node name="OptSize" type="OptionButton" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer3" unique_id=49107388]
+layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 focus_mode = 0
@@ -83,82 +100,70 @@ popup/item_2/id = 2
 popup/item_3/text = "gm_bigcity"
 popup/item_3/id = 3
 
-[node name="BtnGenerate" type="Button" parent="CanvasLayer/Gui"]
+[node name="BtnGenerate" type="Button" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer3" unique_id=2100752302]
 layout_mode = 2
-offset_left = 701.0
-offset_top = 558.0
-offset_right = 781.0
-offset_bottom = 589.0
-grow_horizontal = 0
-grow_vertical = 0
 size_flags_vertical = 8
 focus_mode = 0
 text = "Generate"
 
-[node name="BtnLeft" type="Button" parent="CanvasLayer/Gui"]
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer" unique_id=837637957]
 layout_mode = 2
-offset_left = 18.0
-offset_top = 558.0
-offset_right = 52.0
-offset_bottom = 589.0
-size_flags_vertical = 8
-focus_mode = 0
-text = "  <  "
+theme_override_constants/separation = 21
 
-[node name="BtnRight" type="Button" parent="CanvasLayer/Gui"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4" unique_id=1955140048]
 layout_mode = 2
-offset_left = 56.0
-offset_top = 558.0
-offset_right = 90.0
-offset_bottom = 589.0
-size_flags_vertical = 8
-focus_mode = 0
-text = "  >  "
 
-[node name="BtnZoomIn" type="Button" parent="CanvasLayer/Gui"]
+[node name="BtnZoomIn" type="Button" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer" unique_id=2140566441]
 custom_minimum_size = Vector2(34, 0)
 layout_mode = 2
-offset_left = 130.0
-offset_top = 558.0
-offset_right = 164.0
-offset_bottom = 589.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 focus_mode = 0
 text = "  +  "
 
-[node name="BtnZoomOut" type="Button" parent="CanvasLayer/Gui"]
+[node name="BtnZoomOut" type="Button" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer" unique_id=2077257316]
 custom_minimum_size = Vector2(34, 0)
 layout_mode = 2
-offset_left = 168.0
-offset_top = 558.0
-offset_right = 198.0
-offset_bottom = 589.0
 size_flags_vertical = 8
 focus_mode = 0
 text = "  -  "
 
-[node name="CameraPivot" type="Node3D" parent="."]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4" unique_id=1058024599]
+layout_mode = 2
+
+[node name="BtnLeft" type="Button" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2" unique_id=784485795]
+layout_mode = 2
+size_flags_vertical = 8
+focus_mode = 0
+text = "  <  "
+
+[node name="BtnRight" type="Button" parent="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2" unique_id=1535364893]
+layout_mode = 2
+size_flags_vertical = 8
+focus_mode = 0
+text = "  >  "
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=1170776005]
 transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0, 0)
 
-[node name="CameraAxis" type="Node3D" parent="CameraPivot"]
+[node name="CameraAxis" type="Node3D" parent="CameraPivot" unique_id=1191668432]
 transform = Transform3D(0.955788, 0.294057, 0, -0.294057, 0.955788, 0, 0, 0, 1, 0, 6.856, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraAxis"]
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/CameraAxis" unique_id=451093100]
 transform = Transform3D(-4.37114e-08, 0.0854169, -0.996345, 0, 0.996345, 0.0854169, 1, 3.73369e-09, -4.35516e-08, -30, 0, 0)
 
-[node name="Terrain" type="MeshInstance3D" parent="."]
+[node name="Terrain" type="MeshInstance3D" parent="." unique_id=1514611918]
 transform = Transform3D(736.531, 0, 0, 0, 800, 0, 0, 0, 800, 12.134, -2.1, -5.69249)
 mesh = SubResource("ArrayMesh_k0juu")
 skeleton = NodePath("")
 
-[connection signal="item_selected" from="CanvasLayer/Gui/OptSize" to="." method="_on_opt_size_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Gui/BtnGenerate" to="." method="_on_btn_generate_pressed"]
-[connection signal="button_down" from="CanvasLayer/Gui/BtnLeft" to="." method="_on_btn_left_button_down"]
-[connection signal="button_up" from="CanvasLayer/Gui/BtnLeft" to="." method="_on_btn_left_button_up"]
-[connection signal="pressed" from="CanvasLayer/Gui/BtnLeft" to="." method="_on_btn_left_pressed"]
-[connection signal="toggled" from="CanvasLayer/Gui/BtnLeft" to="." method="_on_btn_left_toggled"]
-[connection signal="button_down" from="CanvasLayer/Gui/BtnRight" to="." method="_on_btn_right_button_down"]
-[connection signal="button_up" from="CanvasLayer/Gui/BtnRight" to="." method="_on_btn_right_button_up"]
-[connection signal="pressed" from="CanvasLayer/Gui/BtnZoomIn" to="." method="_on_btn_zoom_in_pressed"]
-[connection signal="pressed" from="CanvasLayer/Gui/BtnZoomOut" to="." method="_on_btn_zoom_out_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer3/OptSize" to="." method="_on_opt_size_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer3/BtnGenerate" to="." method="_on_btn_generate_pressed"]
+[connection signal="pressed" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer/BtnZoomIn" to="." method="_on_btn_zoom_in_pressed"]
+[connection signal="pressed" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer/BtnZoomOut" to="." method="_on_btn_zoom_out_pressed"]
+[connection signal="button_down" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2/BtnLeft" to="." method="_on_btn_left_button_down"]
+[connection signal="button_up" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2/BtnLeft" to="." method="_on_btn_left_button_up"]
+[connection signal="pressed" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2/BtnLeft" to="." method="_on_btn_left_pressed"]
+[connection signal="toggled" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2/BtnLeft" to="." method="_on_btn_left_toggled"]
+[connection signal="button_down" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2/BtnRight" to="." method="_on_btn_right_button_down"]
+[connection signal="button_up" from="CanvasLayer/Gui/MarginContainer/HBoxContainer/HBoxContainer4/HBoxContainer2/BtnRight" to="." method="_on_btn_right_button_up"]
