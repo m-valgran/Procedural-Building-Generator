@@ -10,4 +10,5 @@
 ### Instructions
 To generate random building textures, throw your images into the corresponding directory inside /assets/textures/\
 Files in the "detail" (building corner details), "door", "wall" and "window" directories will be used to cretate the buildings wall textures.\
-The "rooftop" directory contains the textures for the building top faces.
+The "rooftop" directory contains the textures for the building top faces.\
+<img width="256" height="519" alt="Image" src="https://github.com/user-attachments/assets/f1c32883-fa05-44aa-9fe0-da41543e4a73" />
